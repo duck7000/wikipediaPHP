@@ -25,14 +25,14 @@ $wiki = new \Wiki\WikiContent("2158677");
 $results = $wiki->getWikiContent($siteLanguage = "en");
 ```
 
-Convert wikimedia Qid to pageId:
+Convert wikimedia Qid to pageId:<br>
 @parameter string $qid wikidata id
 ```php
 $wiki = new \Wiki\PageId();
 $results = $wiki->qidToPageId($qid);
 ```
 
-Convert wikipedia page url to pageId:
+Convert wikipedia page url to pageId:<br>
 @param string $url FQDN e.g. https://en.wikipedia.org/wiki/Peter_Fonda
 ```php
 $wiki = new \Wiki\PageId();
