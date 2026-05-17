@@ -4,7 +4,7 @@ wikipediaPHP
 PHP library for retrieving data from wikipedia API.<br>
 This library is primarily meant to get wikipedia content for Music albums<br>
 but can also be used for artist/persons or bands<br>
-@Note these sections are not included:<br>
+@Note: Sections not included:<br>
 >     External_links<br>
 >     Track_listing<br>
 >     Charts<br>
