@@ -26,6 +26,18 @@ class PageId extends MdbBase
     }
 
     /**
+     * parse wikidata Url to extract Qid
+     * @param string $url FQDN e.g. https://www.wikidata.org/wiki/Q1970150
+     * @return string|false Qid
+     */
+    public function wikiDataUrlToQid($wikidataUrl)
+    {
+        $wikidataUrlParts = parse_url(rtrim($wikidataUrl, "/"));
+        $urlParts = explode('/', ltrim($wikidataUrlParts['path'], "/"));
+        return isset($urlParts[1]) ? $urlParts[1] : false;
+    }
+
+    /**
      * Convert Qid to PageId
      * @param string $qid wikidata Qid like Q12345
      * @return string pageId or false
