@@ -14,7 +14,7 @@ namespace Wiki;
  * Get content from wikipedia page
  * @author ed (github user: duck7000)
  */
-class Wiki extends MdbBase
+class WikiContent extends MdbBase
 {
     protected $pageId;
     protected $wikiContent = array();
