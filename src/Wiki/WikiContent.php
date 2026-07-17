@@ -36,8 +36,6 @@ class WikiContent extends MdbBase
     public function getWikiContent($siteLanguage = 'en')
     {
         $sectionsContent = $this->getSectionContent($siteLanguage);
-        $this->wikiContent['title'] = $sectionsContent[0]['title'];
-        $this->wikiContent['pageId'] = $sectionsContent[0]['pageid'];
         foreach ($sectionsContent as $key => $content) {
             if ($key == 0) {
                 $this->firstSectionSummary($content['text']);
@@ -141,7 +139,7 @@ class WikiContent extends MdbBase
                 if (stripos($html, "mw-ext-cite-error") !== false) {
                     continue;
                 }
-                $this->wikiContent['summary'][] = $this->cleanHtml($html);
+                $this->wikiContent['Summary'][] = $this->cleanHtml($html);
             }
         }
         $this->firstSectionInfobox($dom);
@@ -199,7 +197,7 @@ class WikiContent extends MdbBase
                             }
                             $infoboxResults[$thData] = $tdData;
                         }
-                        $this->wikiContent['infobox'] = $infoboxResults;
+                        $this->wikiContent['Infobox'] = $infoboxResults;
                     }
                 }
             }
