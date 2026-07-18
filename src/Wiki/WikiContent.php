@@ -238,6 +238,7 @@ class WikiContent extends MdbBase
                         stripos($elementId, "Credits") !== false ||
                         stripos($elementId, "Tours") !== false ||
                         stripos($elementId, "Band_members") !== false ||
+                        stripos($elementId, "Track_by_track") !== false ||
                         stripos($elementId, "Discography") !== false
                        )
                     {
