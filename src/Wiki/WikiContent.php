@@ -86,6 +86,7 @@ class WikiContent extends MdbBase
                         stripos($section->anchor, "Release_history") !== false ||
                         stripos($section->anchor, "Award") !== false ||
                         stripos($section->anchor, "Accolade") !== false ||
+                        stripos($section->anchor, "Source") !== false ||
                         stripos($section->anchor, "Further_reading") !== false
                        )
                     {
