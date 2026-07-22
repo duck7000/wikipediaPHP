@@ -59,6 +59,8 @@ class WikiContent extends MdbBase
      *      See_also
      *      Release_history
      *      Awards
+     *      Accolade
+     *      Source
      *      Further_reading
      * @return array()
      */
