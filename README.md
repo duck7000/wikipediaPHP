@@ -16,6 +16,7 @@ but can also be used for artist/persons or bands<br>
 >     Release_history
 >     Award
 >     Accolade
+>     Source
 >     Further_reading
 
 All info is in the wiki pages, https://github.com/duck7000/wikipediaPHP/wiki
