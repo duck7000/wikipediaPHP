@@ -28,7 +28,7 @@ class PageId extends MdbBase
     /**
      * parse wikidata Url to extract Qid
      * @param string $url FQDN e.g. https://www.wikidata.org/wiki/Q1970150
-     * @return string|false Qid
+     * @return string|false
      */
     public function wikiDataUrlToQid($wikidataUrl)
     {
@@ -40,7 +40,7 @@ class PageId extends MdbBase
     /**
      * Convert Qid to PageId
      * @param string $qid wikidata Qid like Q12345
-     * @return string pageId or false
+     * @return string|false
      */
     public function qidToPageId($qid)
     {
@@ -63,7 +63,7 @@ class PageId extends MdbBase
      * convert wikipedia Url to pageId
      * @param string $url FQDN e.g. https://en.wikipedia.org/wiki/Peter_Fonda
      * @note $url can be for different languages e.g. en, fr, se etc
-     * @return string pageId or false
+     * @return string|false
      */
     public function urlToPageId($url)
     {
@@ -86,4 +86,5 @@ class PageId extends MdbBase
         }
         return false;
     }
+
 }

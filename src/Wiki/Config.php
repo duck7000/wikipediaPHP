@@ -38,7 +38,7 @@ class Config
     /**
      * Throw Exception if something goes wrong with the api call
      * True: throws Exception, false: returns empty object
-     * @var boolean
+     * @var bool
      */
     public $throwHttpExceptions = false;
 

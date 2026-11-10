@@ -17,9 +17,6 @@ namespace Wiki;
 class Api
 {
 
-    /**
-     * @var Config
-     */
     private $config;
 
     /**
@@ -34,7 +31,7 @@ class Api
     /**
      * Get qid info
      * @param string $qid wikidata Qid
-     * @return json object or false
+     * @return object|bool
      */
     public function qidInfo($qid)
     {
@@ -60,7 +57,7 @@ class Api
      * Get page name info
      * @param string $pageName wikipedia page name
      * @param string $siteLanguage wikipedia site language
-     * @return json object or false
+     * @return object|bool
      */
     public function pageNameInfo($pageName, $siteLanguage)
     {
@@ -87,7 +84,7 @@ class Api
      * Search wikipedia api
      * @param string $searchString search query
      * @param string $siteLanguage wikipedia site language
-     * @return json object or false
+     * @return object|bool
      */
     public function searchWikipedia($searchString, $siteLanguage)
     {
@@ -114,7 +111,7 @@ class Api
      * Get sections list from wikipedia page
      * @param string $pageId wikipedia page id
      * @param string $siteLanguage wikipedia site language
-     * @return json object or false
+     * @return object|bool
      */
     public function pageIdInfo($pageId, $siteLanguage)
     {
@@ -142,7 +139,7 @@ class Api
      * @param string $section section number
      * @param string $siteLanguage wikipedia site language
      * @param string $pageId wikipedia page id
-     * @return json object or false
+     * @return object|bool
      */
     public function sectionText($section, $siteLanguage, $pageId)
     {
@@ -170,7 +167,8 @@ class Api
     /**
      * Execute request
      * @param string $url
-     * @return \stdClass, false or exception
+     * @return string|bool|\stdClass
+     * @throws exception
      */
     public function execRequest($url)
     {
@@ -188,4 +186,5 @@ class Api
             }
         }
     }
+
 }

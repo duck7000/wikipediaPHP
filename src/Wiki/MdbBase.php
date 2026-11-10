@@ -18,14 +18,7 @@ class MdbBase extends Config
 {
     public $version = '1.0.0';
 
-    /**
-     * @var Config
-     */
     protected $config;
-
-    /**
-     * @var API
-     */
     protected $api;
 
     /**
@@ -36,4 +29,5 @@ class MdbBase extends Config
         $this->config = $config ?: $this;
         $this->api = new Api($this->config);
     }
+
 }

@@ -28,9 +28,9 @@ class Search extends MdbBase
     /**
      * Search for wikipedia pages matching input search query
      * @param string $earchString input search query
-     * @param string $siteLanguage wikipedia site language
+     * @param array
      */
-    public function search($searchString, $siteLanguage = 'en')
+    public function search($searchString, $siteLanguage = 'en'): array
     {
         $results = array();
         $searchResults = $this->api->searchWikipedia($searchString, $siteLanguage);
@@ -51,4 +51,5 @@ class Search extends MdbBase
         }
         return $results;
     }
+
 }

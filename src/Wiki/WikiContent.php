@@ -31,9 +31,9 @@ class WikiContent extends MdbBase
     /**
      * Get wikipedia content
      * @param string $siteLanguage wikipedia site language
-     * @return array()
+     * @return array
      */
-    public function getWikiContent($siteLanguage = 'en')
+    public function getWikiContent($siteLanguage = 'en'): array
     {
         $sectionsContent = $this->getSectionContent($siteLanguage);
         foreach ($sectionsContent as $key => $content) {
@@ -46,7 +46,7 @@ class WikiContent extends MdbBase
     }
 
     /**
-     * Get sections numbers
+     * Get sections
      * @param string $siteLanguage wikipedia site language
      * @note excluded sections:
      *      External_links
@@ -62,7 +62,7 @@ class WikiContent extends MdbBase
      *      Accolade
      *      Source
      *      Further_reading
-     * @return array()
+     * @return array|false
      */
     protected function getSections($siteLanguage)
     {
@@ -104,9 +104,9 @@ class WikiContent extends MdbBase
 
     /**
      * Get wikipedia content from pageId
-     * @return array()
+     * @return array
      */
-    protected function getSectionContent($siteLanguage)
+    protected function getSectionContent($siteLanguage): array
     {
         $results = array();
         $sectionNumbers = $this->getSections($siteLanguage);
@@ -129,7 +129,7 @@ class WikiContent extends MdbBase
     /**
      * Process first section of wikipedia content (summary only)
      * @param string $firstContent content of first section
-     * @return array()
+     * @return void
      */
     protected function firstSectionSummary($firstContent)
     {
@@ -154,7 +154,7 @@ class WikiContent extends MdbBase
      * Process first section infobox of wikipedia content
      * @param string $firstContent content of first section
      * @param string $dom new instance of DOMDocument from firstSectionSummary()
-     * @return array()
+     * @return void
      */
     protected function firstSectionInfobox($dom)
     {
@@ -212,7 +212,7 @@ class WikiContent extends MdbBase
     /**
      * proces wikipedia html, clean and add to array
      * @param string $textData input wikipedia html
-     * @return array()
+     * @return void
      */
     protected function procesWikipediaText($textData)
     {
@@ -294,7 +294,7 @@ class WikiContent extends MdbBase
      * @param string $html input html
      * @return string
      */
-    protected function cleanHtml($html)
+    protected function cleanHtml($html): string
     {
         $html = preg_replace('/<\s*style.+?<\s*\/\s*style.*?>/si', '', $html);
         $cleanTags =  trim(strip_tags($html));
@@ -303,4 +303,5 @@ class WikiContent extends MdbBase
         $cleanHtml = preg_replace($pattern, '', $cleanTags);
         return trim($cleanHtml);
     }
+
 }
